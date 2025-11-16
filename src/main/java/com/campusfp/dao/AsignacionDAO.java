@@ -9,7 +9,7 @@ public class AsignacionDAO {
 
         String sql = "INSERT INTO asignaciones (empleado_id, proyecto_id, fecha_asignacion) VALUES (?, ?, ?)";
 
-        try (PreparedStatement ps = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql,PreparedStatement.RETURN_GENERATED_KEYS)) {
             ps.setInt(1, empId);
             ps.setInt(2, proyectoId);
             ps.setDate(3, new java.sql.Date(System.currentTimeMillis()));

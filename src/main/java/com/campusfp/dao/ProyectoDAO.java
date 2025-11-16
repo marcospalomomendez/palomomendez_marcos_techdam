@@ -42,7 +42,7 @@ public class ProyectoDAO {
         String sql = "INSERT INTO proyectos (nombre, presupuesto) VALUES (?, ?)";
 
         try (Connection conn = DatabaseConfig.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+             PreparedStatement ps = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
 
             ps.setString(1, proyecto.getNombre());
             ps.setBigDecimal(2, proyecto.getPresupuesto());

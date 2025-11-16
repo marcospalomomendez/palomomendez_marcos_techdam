@@ -15,7 +15,7 @@ public class EmpleadoDAO {
         String sql = "INSERT INTO empleados (nombre, departamento, salario, activo) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = DatabaseConfig.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+             PreparedStatement ps = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
 
             ps.setString(1, empleado.getNombre());
             ps.setString(2, empleado.getDepartamento());
